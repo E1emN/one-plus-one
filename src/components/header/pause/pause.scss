@@ -1,0 +1,21 @@
+@import '../../../assests/styles/mixins.scss';
+@import '../../../assests/styles/variables.scss';
+
+.pause {
+    width: 38px;
+    height: 38px;
+    background: $blue;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    
+    div {
+        width: 4px;
+        height: 20px;
+        background: #fff;
+        border-radius: 10px;
+    }
+}
