@@ -51,5 +51,5 @@ sample({
 sample({
     clock: checkFx.done,
     source: $score,
-    target: [countdownStarted, generateRandomExpression]
+    target: [countdownStarted, generateRandomExpression, addScore]
 });
