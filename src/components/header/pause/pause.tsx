@@ -1,7 +1,6 @@
-import React from 'react';
 import './pause.scss';
 
-export const Pause: React.FC = () => {
+export const Pause = () => {
     return(
         <div className='pause'>
             <div />

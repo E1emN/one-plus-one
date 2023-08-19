@@ -1,11 +1,10 @@
-import React from 'react';
 import './header.scss';
 import { Pause } from './pause/pause';
 import { Restart } from './restart/restart';
 import { useUnit } from 'effector-react';
 import { $score } from '../../model/game';
 
-export const Header: React.FC = () => {
+export const Header = () => {
 
     const score = useUnit($score);
  

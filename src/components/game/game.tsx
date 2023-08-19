@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './game.scss';
 import { useUnit } from 'effector-react';
 import { gameStarted, $currentExpression, userChose } from '../../model/game';
 
-export const Game: React.FC = () => {
+export const Game = () => {
 
     const currentExpression = useUnit($currentExpression);
 

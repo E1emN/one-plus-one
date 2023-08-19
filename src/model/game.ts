@@ -1,11 +1,6 @@
 import { createDomain, sample } from 'effector';
 import { generateExpression } from '../utils/ganerateExpression';
-
-type Expression = string;
-type UserChoice = {
-    expression: Expression,
-    userChoise: number
-}
+import type { Expression, UserChoice } from '../types/model/game.types';
 
 const gameDomain = createDomain();
 
@@ -18,7 +13,7 @@ const countdownStarted = gameDomain.event();
 export const $currentExpression = gameDomain.store<Expression>(null)
 const generateRandomExpression = gameDomain.event<number>();
 
-const $timeLeft = gameDomain.store(5000);
+//const $timeLeft = gameDomain.store(5000);
 
 export const userChose = gameDomain.event<number>();
 
@@ -28,10 +23,10 @@ $score
     .on(addScore, c => c + 1);
 
 $currentExpression
-    .on(generateRandomExpression, (_, score) => generateExpression('simple')) // a!
+    .on(generateRandomExpression, (_,) => generateExpression('simple')) // a!
 
 checkFx.use(({ expression, userChoise }) => {
-    if (eval(expression) === userChoise) return
+    if (eval(expression!) === userChoise) return
     throw new Error('Wrong answer')
 })
 
